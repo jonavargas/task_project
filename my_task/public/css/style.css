@@ -1,0 +1,77 @@
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+#board
+{
+
+min-height:100px;
+display: inline-block;
+}
+
+#title
+{	margin-left: -16px;
+	border: 2px solid #999;
+	background-color:#f7f5f5;
+	text-align:center;
+	color:black;
+	padding: 10px 20px;
+	width: 111%;
+}
+
+#nueva, #en_progreso, #terminada, #verificada
+{
+	/*background-color: tan;*/
+	background-color: #f7f5f5;
+	display: inline-block;	
+	min-height: 600px;
+	border: 1px solid #999;
+}
+
+*[draggable=true]
+{
+	float: left;
+	min-width: 50px;
+	min-height: 50px;
+	border: 1px solid #CCC;
+	margin: 10px;
+	margin-top: 15px;
+	font-weight: bold;
+	min-height: 60px;
+	/*background-image: -webkit-gradient(linear,
+             left top, left bottom,
+color-stop(0.63, white),
+             color-stop(0.92, rgb(5,161,245)));
+                    background-image:-moz-linear-gradient(
+                        center top,
+                        white 63%,
+                        rgb(5,161,245) 92%
+                    );
+				*/
+			/*para Firefox*/
+	-moz-border-radius: 15px 15px 15px 15px;
+	/*para Safari y Chrome*/
+	-webkit-border-radius: 15px 15px 15px 15px;
+	/* para Opera */
+	border-radius: 15px 15px 15px 15px;
+	-webkit-background-size: 1px 8px;
+	-moz-background-size: 1px 8px;
+	background-size: 1px 8px;
+	background-repeat: repeat;
+	width: 90%;
+	background-color:#FFF;
+}
+
+.cardTitle
+{
+	padding:10px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#CCC;
+	font-size:12px;
+	
+/*background-color: rgb(255,255,255);
+border:2px solid white;
+*/}

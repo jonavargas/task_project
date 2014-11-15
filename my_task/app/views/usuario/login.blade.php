@@ -15,3 +15,5 @@
 	{{ Form::password('password', array('placeholder' => 'Contraseña', 'class' => 'form-control', 'required' => 'true')) }}
 	{{ Form::submit('Login', array())}}
 {{ Form::close() }}
+
+{{HTML::script('js/task.js');}}
