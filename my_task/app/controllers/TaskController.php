@@ -9,6 +9,11 @@ class TaskController extends \BaseController {
 	 */
 	public function index()
 	{
+		if (Request::ajax())////////////////////////////////////////////
+		{
+    		$task = Task::all();
+    		return Response::Json($task);
+		}///////////////////////////////////////////////////////////////
 		$task = Task::all();
         $this->layout->titulo = 'Listado de tareas';
         $this->layout->nest(
@@ -21,6 +26,7 @@ class TaskController extends \BaseController {
 	}
 
 
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -28,7 +34,12 @@ class TaskController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$this->layout->titulo = 'Crear Task';
+        $this->layout->nest(
+            'content',
+            'tasks.create',
+            array()
+        );
 	}
 
 
@@ -87,8 +98,9 @@ class TaskController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$task = Task::find($id);
+        $task->delete();
+        return Redirect::to('tasks');
 	}
-
 
 }

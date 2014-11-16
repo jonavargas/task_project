@@ -1,7 +1,7 @@
 $('document').ready(init);
 
         function init(){
-            $('#item1,#item2,#item3,#item4,#item5').bind('dragstart', function(event) {//#item1 este deberia ser el id de la base de datos
+            $('.Alta, .Media, .Baja').bind('dragstart', function(event) {//#item1 este deberia ser el id de la base de datos
                 event.originalEvent.dataTransfer.setData("text/plain", event.target.getAttribute('id'));
             });
             

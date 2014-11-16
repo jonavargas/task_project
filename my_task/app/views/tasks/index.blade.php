@@ -2,41 +2,26 @@
 <html>
 <body>
 
-<h1>My First Heading</h1>
-
-<p>My first paragraph.</p>
+{{link_to("tasks/create", 'Nueva Tarea', $attributes = array(), $secure = null);}}
 
 <body>
     <div id="board" class="col-md-12">
-        <div id="nueva" class="col-md-3">
+        <div id="nueva" class="col-md-3">        				
         	<div class="title" id="title">
         		Nuevo
         	</div>
-	        <div id="item1" draggable="true">
-	            <div class="cardTitle">
-	                Iron Maiden
+        	@foreach($tasks as $task)
+
+			<div id="{{ $task->id }}" draggable="true" class="{{ $task->prioridad }}">
+	            <div id="descripcion">
+	                <div id="task_title">{{ $task->titulo }}</div>
+	                {{ $task->prioridad }}
+	                <div id='eliminar'>{{link_to("tasks/$task->id/delete", '', $attributes = array('class' => 'glyphicon glyphicon-remove'), $secure = null);}}</div>
+	                {{link_to("tasks/$task->id/edit", $task->descripcion, $attributes = array(), $secure = null);}}
 	            </div>
-	        </div>
-	        <div id="item2" draggable="true">
-	            <div class="cardTitle">
-	                Slipknot
-	            </div>
-	        </div>
-	        <div id="item3" draggable="true">
-	            <div class="cardTitle">
-	                Rammstein
-	            </div>
-	        </div>
-	        <div id="item4" draggable="true">
-	            <div class="cardTitle">
-	                Megadeth
-	            </div>
-	        </div>
-	        <div id="item5" draggable="true">
-	            <div class="cardTitle">
-	                Metallica
-	            </div>
-	        </div>
+	        </div>					
+
+	    	@endforeach
         </div>
 
 	    <div id="en_progreso" class="col-md-3">
@@ -61,3 +46,11 @@
 </body>
 </html> 
 {{HTML::script('js/task.js');}} 
+
+
+	
+  
+
+    		
+	        
+	        

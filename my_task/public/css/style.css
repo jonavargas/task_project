@@ -7,9 +7,8 @@ body {
 
 #board
 {
-
-min-height:100px;
-display: inline-block;
+	min-height:100px;
+	display: inline-block;
 }
 
 #title
@@ -20,6 +19,28 @@ display: inline-block;
 	color:black;
 	padding: 10px 20px;
 	width: 111%;
+}
+
+#task_title{	
+	text-align:center;
+	margin-top: 0.8%;
+	margin-left: -2%;
+}
+
+#descripcion{
+	text-align: left;
+	margin-left: 2%;	
+}
+
+#eliminar{
+	float: right;
+	margin-right: 2%;
+	margin-top: -1.5%;
+}
+
+.glyphicon:hover {
+	text-decoration: none;
+	color: #C60000;
 }
 
 #nueva, #en_progreso, #terminada, #verificada
