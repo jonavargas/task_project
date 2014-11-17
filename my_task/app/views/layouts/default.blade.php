@@ -6,6 +6,18 @@
 	{{HTML::style('css/style.css');}}
 	{{HTML::style('bootstrap/css/bootstrap.min.css');}}
 	{{HTML::script('bootstrap/js/bootstrap.min.js');}}
+
+
+
+
+	{{HTML::script('bootstrap/js/jquery-ui/jquery-ui.css');}}
+	{{HTML::script('bootstrap/js/jquery-ui/jquery-ui.js');}}
+	{{HTML::script('bootstrap/js/jquery-ui/jquery-ui.structure.css');}}
+	{{HTML::script('bootstrap/js/jquery-ui/jquery-ui.theme.css');}}
+
+
+
+
 </head>
 <body>
 
