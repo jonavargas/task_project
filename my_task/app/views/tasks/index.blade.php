@@ -14,10 +14,9 @@
 
 			<div id="{{ $task->id }}" draggable="true" class="{{ $task->prioridad }}">
 	            <div id="descripcion">
-	                <div id="task_title">{{ $task->titulo }}</div>
-	                {{ $task->prioridad }}
-	                <div id='eliminar'>{{link_to("tasks/$task->id/delete", '', $attributes = array('class' => 'glyphicon glyphicon-remove'), $secure = null);}}</div>
-	                {{link_to("tasks/$task->id/edit", $task->descripcion, $attributes = array(), $secure = null);}}
+	                <div id="task_title">{{ $task->titulo }}</div>	                
+	                <div id='eliminar'>{{link_to("tasks/$task->id/delete", '', $attributes = array('class' => 'glyphicon glyphicon-remove', 'onClick' => 'return confirmar(‘¿Está seguro que desea eliminar el registro?’)'), $secure = null);}}</div>
+	                {{link_to("tasks/$task->id/edit", $task->descripcion, $attributes = array(), $secure = null);}}	           					
 	            </div>
 	        </div>					
 
@@ -45,12 +44,4 @@
 
 </body>
 </html> 
-{{HTML::script('js/task.js');}} 
-
-
-	
-  
-
-    		
-	        
-	        
+{{HTML::script('js/task.js');}}      

@@ -8,17 +8,30 @@
 	{{HTML::script('bootstrap/js/bootstrap.min.js');}}
 </head>
 <body>
-	<a href="login">Login</a>
-	<a href="registro">Registro</a>
-	<a href="publica">Publica</a>
-	<a href="privada">Privada</a>
-	<a href="tasks">Tasks</a>
+
 	<?php
-		if (Auth::check()) {
-			echo "<a href='logout'>Cerrar Session</a>";
+		if (!Auth::check()) {				
+	?>
+		<div class="btn-group" role="group">
+			{{ HTML::linkAction('UserController@index', 'Login', array(), array('class' => 'btn btn-primary')) }}
+			{{ HTML::linkAction('UserController@create', 'Registro', array(), array('class' => 'btn btn-primary')) }}				
+		</div>
+	<?php
+		}				
+	?>
+
+	<?php
+		if (Auth::check()) {					
+	?>		
+		<div class="btn-group" role="group">
+			{{ HTML::linkAction('TaskController@index', 'Tareas', array(), array('class' => 'btn btn-primary')) }}
+			{{ HTML::linkAction('UserController@logout', 'Cerrar Session', array(), array('class' => 'btn btn-primary')) }}
+		</div>
+	<?php 
 			echo "<h3>Usuario Logueado</h3>";
 		}
 	?>
+
 	{{ $content }}
 </body>
 </html>

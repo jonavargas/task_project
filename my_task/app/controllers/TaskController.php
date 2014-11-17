@@ -9,22 +9,18 @@ class TaskController extends \BaseController {
 	 */
 	public function index()
 	{
-		if (Request::ajax())////////////////////////////////////////////
-		{
-    		$task = Task::all();
-    		return Response::Json($task);
-		}///////////////////////////////////////////////////////////////
-		$task = Task::all();
+		$tasks = Task::all();
+		$users = User::all();////////
+
         $this->layout->titulo = 'Listado de tareas';
         $this->layout->nest(
             'content',
             'tasks.index',
             array(
-                'tasks' => $task
+                'tasks' => $tasks
             )
         );
 	}
-
 
 
 	/**
@@ -50,7 +46,24 @@ class TaskController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$user = User::all();
+		$user = new User();
+
+		$titulo = Input::get("titulo");
+        $prioridad = Input::get("prioridad");
+        $descripcion = Input::get("descripcion");
+        $estado = ("nueva");
+        
+        $task = new Task();
+        $task->titulo = $titulo;
+        $task->prioridad = $prioridad;
+        $task->descripcion = $descripcion;
+        $task->estado = $estado;
+
+        $task->users_id = $user->id;/////////////revisar para obtener el id del usuario logueado
+   
+        $task->save();
+        return Redirect::to('tasks');
 	}
 
 
@@ -74,7 +87,14 @@ class TaskController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$task = Task::find($id);
+        $this->layout->nest(
+            'content',
+            'tasks.edit',
+            array(
+                'task' => $task
+            )
+        );
 	}
 
 
@@ -86,7 +106,24 @@ class TaskController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$user = User::all();////////
+		$user = new User();////////
+
+		$titulo = Input::get("titulo");
+        $prioridad = Input::get("prioridad");
+        $descripcion = Input::get("descripcion");
+        $estado = ("nueva");        
+
+        $task = Task::find($id);
+        $task->titulo = $titulo;
+        $task->prioridad = $prioridad;
+        $task->descripcion = $descripcion;
+        $task->estado = $estado;
+
+        $user->id = $task->users_id;/////////////revisar para obtener el id del usuario logueado
+   
+        $task->save();
+        return Redirect::to('tasks');
 	}
 
 
