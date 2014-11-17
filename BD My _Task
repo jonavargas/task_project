@@ -16,16 +16,15 @@ CREATE TABLE users
 
 CREATE TABLE dashboard
 (
-  id serial NOT NULL,
-  titulo character varying(50) NOT NULL,
-  prioridad character varying(20) NOT NULL,
-  descripcion character varying(250) NOT NULL,
-  id_contenedor integer,
-  users_id serial,
-  CONSTRAINT pk_dashboard PRIMARY KEY (id), 
-  constraint fk_users  foreign key (users_id) references users (id)
+ id serial NOT NULL,
+ titulo character varying(50) NOT NULL,
+ prioridad character varying(20) NOT NULL,
+ descripcion character varying(250) NOT NULL,
+ estado character varying(20) NOT NULL,
+ users_id integer,
+ CONSTRAINT pk_dashboard PRIMARY KEY (id),
+ constraint fk_users foreign key (users_id) references users (id)
 );
-
  
 -- Drop Tables --
 
