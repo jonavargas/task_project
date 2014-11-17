@@ -18,12 +18,11 @@ Route::post('registro', 'UserController@store');
 Route::get('logout', 'UserController@logout');
 Route::get('auth', 'UserController@isLogged');
 
-Route::get('publica', 'HomeController@publica');
+
 
 Route::group(array('before' => 'auth'), function () {
-	Route::get('privada', 'HomeController@privada');
+	Route::resource('tasks', 'TaskController');
+	Route::post('tasks/{id}/update', 'TaskController@update');
+	Route::get('tasks/{id}/delete', 'TaskController@destroy');
 });
 
-Route::resource('tasks', 'TaskController');
-Route::post('tasks/{id}/update', 'TaskController@update');
-Route::get('tasks/{id}/delete', 'TaskController@destroy');

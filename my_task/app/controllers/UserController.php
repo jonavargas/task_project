@@ -30,7 +30,7 @@ class UserController extends \BaseController {
         );
 
         if (Auth::attempt($userdata)) {
-            return Redirect::to('privada');
+            return Redirect::to('tasks');
         } else {
             // validation not successful, send back to form
             return Redirect::to('login')->withErrors(array('invalid_credentials' => 'Acceso Denegado'));

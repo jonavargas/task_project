@@ -24,7 +24,7 @@
 		if (Auth::check()) {					
 	?>		
 		<div class="btn-group" role="group">
-			{{ HTML::linkAction('TaskController@index', 'Tareas', array(), array('class' => 'btn btn-primary')) }}
+			{{ HTML::linkAction('TaskController@index', 'Dashboard', array(), array('class' => 'btn btn-primary')) }}
 			{{ HTML::linkAction('UserController@logout', 'Cerrar Session', array(), array('class' => 'btn btn-primary')) }}
 		</div>
 	<?php 

@@ -1,11 +1,8 @@
 $('document').ready(init);
 
-
-
         $('.glyphicon').click(function confirmar(){                              
             return confirm( '¿Estas seguro de eliminar esta tarea?' );
         });
-
 
         function init(){
             $('.Alta, .Media, .Baja').bind('dragstart', function(event) {//#item1 este deberia ser el id de la base de datos
