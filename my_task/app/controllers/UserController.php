@@ -54,7 +54,7 @@ class UserController extends \BaseController {
 		$user->password = $password;
 		$user->save();
 		Auth::attempt(array('email' => $email, 'password' => $password));
-		return Redirect::to('privada');
+		return Redirect::to('tasks');
 	}
 
 	public function logout()

@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <body>
 
@@ -19,9 +19,9 @@
 				<div id="{{ $task->id }}" draggable="true" class="{{ $task->prioridad }}">
 
 		            <div id="descripcion">
-		                <div id="task_title">{{ $task->titulo }}</div>	                
+		                <div id="task_title">{{link_to("tasks/$task->id/edit", $task->titulo);}}</div>	                
 		                <div id='eliminar'>{{link_to("tasks/$task->id/delete", '', $attributes = array('class' => 'glyphicon glyphicon-remove'), $secure = null);}}</div>
-		                {{link_to("tasks/$task->id/edit", $task->descripcion, $attributes = array(), $secure = null);}}	           					
+		                {{$task->descripcion}}	           					
 		            
 		            </div>
 		        </div>
@@ -47,9 +47,9 @@
 				<div id="{{ $task->id }}" draggable="true" class="{{ $task->prioridad }}">
 
 		            <div id="descripcion">
-		                <div id="task_title">{{ $task->titulo }}</div>	                
+		                <div id="task_title">{{link_to("tasks/$task->id/edit", $task->titulo);}}</div>	                
 		                <div id='eliminar'>{{link_to("tasks/$task->id/delete", '', $attributes = array('class' => 'glyphicon glyphicon-remove'), $secure = null);}}</div>
-		                {{link_to("tasks/$task->id/edit", $task->descripcion, $attributes = array(), $secure = null);}}	           					
+		                {{$task->descripcion}}	           					
 		            
 		            </div>
 		        </div>
@@ -75,9 +75,9 @@
 				<div id="{{ $task->id }}" draggable="true" class="{{ $task->prioridad }}">
 
 		            <div id="descripcion">
-		                <div id="task_title">{{ $task->titulo }}</div>	                
+		                <div id="task_title">{{link_to("tasks/$task->id/edit", $task->titulo);}}</div>	                
 		                <div id='eliminar'>{{link_to("tasks/$task->id/delete", '', $attributes = array('class' => 'glyphicon glyphicon-remove'), $secure = null);}}</div>
-		                {{link_to("tasks/$task->id/edit", $task->descripcion, $attributes = array(), $secure = null);}}	           					
+		                {{$task->descripcion}}	           					
 		            
 		            </div>
 		        </div>
@@ -103,9 +103,9 @@
 				<div id="{{ $task->id }}" draggable="true" class="{{ $task->prioridad }}">
 
 		            <div id="descripcion">
-		                <div id="task_title">{{ $task->titulo }}</div>	                
+		                <div id="task_title">{{link_to("tasks/$task->id/edit", $task->titulo);}}</div>	                
 		                <div id='eliminar'>{{link_to("tasks/$task->id/delete", '', $attributes = array('class' => 'glyphicon glyphicon-remove'), $secure = null);}}</div>
-		                {{link_to("tasks/$task->id/edit", $task->descripcion, $attributes = array(), $secure = null);}}	           					
+		                {{$task->descripcion}}	           					
 		            
 		            </div>
 		        </div>
