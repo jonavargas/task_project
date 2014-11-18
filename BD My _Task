@@ -25,6 +25,11 @@ CREATE TABLE dashboard
  CONSTRAINT pk_dashboard PRIMARY KEY (id),
  constraint fk_users foreign key (users_id) references users (id)
 );
+
+ alter table users
+ add constraint UQ_users_email
+ unique (email); 
+
  
 -- Drop Tables --
 

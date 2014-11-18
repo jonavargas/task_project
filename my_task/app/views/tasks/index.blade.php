@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body>
-
+	<div>
+		<h4><strong>Usuario Logueado: </strong>{{ Auth::user()->email}}</h4>
+	</div>
 {{link_to("tasks/create", 'Nueva Tarea', $attributes = array(), $secure = null);}}
 
 <body>
@@ -122,3 +124,4 @@
 </body>
 </html> 
 {{HTML::script('js/task.js');}}      
+     
