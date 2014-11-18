@@ -38,7 +38,6 @@ class UserController extends \BaseController {
 
 	}
 
-
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -46,14 +45,47 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
-		$email = Input::get('email');
-		$password = Input::get('password');
-		$password = Hash::make($password);
-		$user = new User();
-		$user->email = $email;
-		$user->password = $password;
-		$user->save();
-		Auth::attempt(array('email' => $email, 'password' => $password));
+		
+		$email = e(Input::get('email'));
+		$password = e(Input::get('password'));
+		$confirmar = e(Input::get('confirmar'));
+		 
+		$rules = array(
+		            'email' => 'required|min:4|max:100|unique:users','password' => 'confirmed','confirmar' => 'confirmed',		            
+		        );
+
+		$rules_password = array(
+		            'password' => 'confirmed',		            
+		        );
+		 		
+		$messages = array(
+		            'required' => 'Este campo es obligatorio.',
+		            'min' => 'Este campo no puede tener menos de :min carácteres.',		            
+		            'max' => 'Este campo no puede tener más de :max carácteres.',
+		            'unique' => 'El usuario o email ingresado ya existe en la base de datos',
+		            'confirmed' => 'El :attribute no coincide con el :attribute de confirmación'
+		        );
+	 			
+		$validation = Validator::make(Input::all(), $rules, $messages);
+		 
+		if ($validation->fails())
+		{
+		       
+		       return Redirect::to('registro')->withErrors($validation)->withInput();
+		}
+
+		else
+		{
+			$email = Input::get('email');
+			$password = Input::get('password');
+			$password = Hash::make($password);
+			$user = new User();
+			$user->email = $email;
+			$user->password = $password;
+			$user->save();
+			Auth::attempt(array('email' => $email, 'password' => $password));
+		}
+	
 		return Redirect::to('tasks');
 	}
 
@@ -69,6 +101,4 @@ class UserController extends \BaseController {
             return Redirect::to('login');
         }
     }
-
-
 }

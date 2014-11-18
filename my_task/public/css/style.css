@@ -3,6 +3,10 @@ body {
   padding-bottom: 30px;
   font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+h1{
+	font-size: 2em;
+	text-align: center;
+}
 
 
 #board
@@ -96,3 +100,24 @@ color-stop(0.63, white),
 /*background-color: rgb(255,255,255);
 border:2px solid white;
 */}
+.create{
+
+	width: 80%;
+	background: #9CEBDD;
+}
+.email{
+	width:50%;
+	margin-left: 43.5%;
+
+}
+.login{
+	text-align: center;
+	background: #D7F9AF;
+	width: 30%;
+	margin-left: 40%;
+}
+.password{
+	width:40%;
+	margin-left: 30%;
+	height: 2%;
+}

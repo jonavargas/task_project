@@ -1,3 +1,4 @@
+<div class="create"> 
 {{ Form::open(array('url' => 'tasks')) }}
 	{{ Form::label('titulo', 'Titulo') }}
 	{{ Form::text('titulo', '') }}
@@ -10,3 +11,7 @@
 	{{ HTML::linkAction('TaskController@index', 'Cancelar', array(), array('class' => 'btn btn-warning')) }}
 
 {{ Form::close() }}
+
+
+
+</div>
