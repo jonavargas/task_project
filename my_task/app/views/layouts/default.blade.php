@@ -7,9 +7,8 @@
 	{{HTML::style('bootstrap/css/bootstrap.min.css');}}
 	{{HTML::script('bootstrap/js/bootstrap.min.js');}}
 
-
-
 </head>
+
 <body class= "body">
 
 	
@@ -17,9 +16,9 @@
 	<?php
 		if (Auth::check()) {					
 	?>		
-		<div class="btn-group" role="group">
-			{{ HTML::linkAction('TaskController@index', 'Dashboard', array(), array('class' => 'btn btn-primary')) }}
-			{{ HTML::linkAction('UserController@logout', 'Cerrar Session', array(), array('class' => 'btn btn-primary')) }}
+		<div class="btn-group menu" role="group">
+			
+			{{ HTML::linkAction('UserController@logout', 'Log out', array(), array('class' => 'btn btn-default')) }}
 		</div>
 	<?php		
 		}

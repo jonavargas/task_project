@@ -28,7 +28,6 @@
 </div>
 
 
-{{HTML::script('js/task.js');}}
-
 	
 </body>
+{{HTML::script('js/task.js');}}

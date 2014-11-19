@@ -1,15 +1,19 @@
-<div class="create"> 
+<div class="create frmcreate"> 
+	<h2 class="title">New task</h2>
+	<br>
 {{ Form::open(array('url' => 'tasks')) }}
-	{{ Form::label('titulo', 'Titulo') }}
+	{{ Form::label('titulo', 'Title') }}
 	{{ Form::text('titulo', '') }}
-	{{ Form::label('prioridad', 'Prioridad') }}
-	{{ Form::select('prioridad', array('Alta' => 'Alta', 'Media' => 'Media', 'Baja' => 'Baja')) }}
-	{{ Form::label('descripcion', 'Descripcion') }}
+	{{ Form::label('prioridad', 'Priority') }}
+	{{ Form::select('prioridad', array('Alta' => 'High', 'Media' => 'Medium', 'Baja' => 'Low')) }}
+	<br><br>{{ Form::label('descripcion', 'Description') }}
 	{{ Form::textArea('descripcion', '') }}
-	
-	{{Form::submit('Salvar', array('class' => 'btn btn-success'))}}
-	{{ HTML::linkAction('TaskController@index', 'Cancelar', array(), array('class' => 'btn btn-warning')) }}
-
+	<br>
+	<br>
+	<div class="submit">{{Form::submit('Save', array('class' => 'btn btn-primary'))}}</div>
+	<div class="registrarse">{{ HTML::linkAction('TaskController@index', 'Back', array(), array('class' => 'btn btn-primary')) }}</div>
+	<br>
+	<br>
 {{ Form::close() }}
 
 
