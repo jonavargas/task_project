@@ -10,18 +10,9 @@
 
 
 </head>
-<body>
+<body class= "body">
 
-	<?php
-		if (!Auth::check()) {				
-	?>
-		<div class="btn-group" role="group">
-			{{ HTML::linkAction('UserController@index', 'Login', array(), array('class' => 'btn btn-primary')) }}
-			{{ HTML::linkAction('UserController@create', 'Registro', array(), array('class' => 'btn btn-primary')) }}				
-		</div>
-	<?php
-		}				
-	?>
+	
 
 	<?php
 		if (Auth::check()) {					

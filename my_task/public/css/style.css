@@ -1,7 +1,8 @@
-body {
+.body {
   padding-top: 70px;
   padding-bottom: 30px;
   font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #BAE1E8;
 }
 h1{
 	font-size: 2em;
@@ -106,8 +107,15 @@ border:2px solid white;
 	background: #9CEBDD;
 }
 .email{
-	width:50%;
-	margin-left: 43.5%;
+	font-size: 1.4em;
+
+}
+.frmlogin{
+	width: 35%;
+	text-align: center;
+	background: #EBEBEB;
+	border-radius: 5%;
+	margin-left: 30%;
 
 }
 .login{
@@ -117,7 +125,26 @@ border:2px solid white;
 	margin-left: 40%;
 }
 .password{
-	width:40%;
-	margin-left: 30%;
+	width:17%;
+	margin-left: 23.5%;
 	height: 2%;
+	font-size: 1.4em;
+}
+.title{
+	width: 100%;
+	background: #3688C4;
+	border-radius: 5%;
+	color: #FFFFFF;
+	font-size: 1.9em;
+
+}
+.registrarse{ 
+	margin-left: 20%;
+	font-size: 1.4em;
+	color: #080303;
+	margin-top: -7%;
+}
+.submit{
+	margin-left: -25%;
+
 }

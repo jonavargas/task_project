@@ -1,4 +1,5 @@
-<h1>Login</h1>
+<body >
+	
 
 @if ($errors->has())
     <div class="alert-danger text-center" role="alert">
@@ -7,13 +8,27 @@
         <small>{{ $errors->first('invalid_credentials') }}</small>
     </div>
 @endif
-{{ Form::open(array('url' => 'login')) }}
-	<label for="email">Email:</label>
-	{{Form::text('email', Input::old('email'), array('placeholder' => 'Email', 'required' => 'true'))}}
-	<br>
-	<label for="password">Password:</label>
-	{{ Form::password('password', array('placeholder' => 'Contraseña', 'class' => 'form-control', 'required' => 'true')) }}
-	{{ Form::submit('Iniciar sesión', array('class' => 'btn btn-success'))}}
-{{ Form::close() }}
+<div class="frmlogin">
+	{{ Form::open(array('url' => 'login')) }}
+		<h1 class= "title"> My Task Login</h1>
+		<label for="email"><h4><strong class= "glyphicon glyphicon-user"> User or Email:</strong></h4></label>
+		<div class= "email">{{Form::text('email', Input::old('email'), array('placeholder' => 'User or Email', 'required' => 'true'))}}</div>
+		<br>
+		<label for="password"><h4><strong class="glyphicon glyphicon-credit-card"> Password:</strong></h4></label>
+		<div class="password">{{ Form::password('password', array('placeholder' => 'Password', 'required' => 'true')) }}</div>
+		<br>
+		<br>
+		<div class="submit">{{ Form::submit('Log In', array('class' => 'btn btn-primary'))}}</div>	
+		<div class="registrarse">{{ HTML::linkAction('UserController@create', 'Sign in', array(), array('class' => 'btn btn-primary ')) }}</div>
+		<br>
+		<br>
+	{{ Form::close() }}
+	
+
+</div>
+
 
 {{HTML::script('js/task.js');}}
+
+	
+</body>
