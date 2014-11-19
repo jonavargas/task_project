@@ -18,7 +18,8 @@
 	?>		
 		<div class="btn-group menu" role="group">
 			
-			{{ HTML::linkAction('UserController@logout', 'Log out', array(), array('class' => 'btn btn-default')) }}
+			{{ HTML::linkAction('UserController@logout', 'Log out', array(), array('class' => 'btn btn-danger')) }}
+
 		</div>
 	<?php		
 		}

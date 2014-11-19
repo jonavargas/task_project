@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
 <body>
-	<div>
-		<h4><strong>Usuario Logueado: </strong>{{ Auth::user()->email}}</h4>
+	<div class="userLogin">
+		<h4><strong>User Log In: </strong>{{ Auth::user()->email}}</h4>
 	</div>
-{{link_to("tasks/create", 'Nueva Tarea', $attributes = array(), $secure = null);}}
-
-<body>
+	<div class="newtask">{{link_to("tasks/create", 'New Task', $attributes = array('class' => 'btn btn-default'), $secure = null);}}</div>
+	<br>
     <div id="board" class="col-md-12">
         <div id="nueva" class="col-md-3">        				
         	<div class="title" id="title">
-        		Nuevo
+        		New
         	</div>
 
         	@foreach($tasks as $task)
@@ -27,18 +26,16 @@
 		            
 		            </div>
 		        </div>
-
 	    	<?php  
 	    		}
 	    	?>
-
 	    	@endforeach
 
         </div>
 
 	    <div id="en_progreso" class="col-md-3">
 	        <div class="title" id="title">
-	        	En Progreso
+	        	In Progress
 	        </div>
 
 	        @foreach($tasks as $task)
@@ -55,18 +52,15 @@
 		            
 		            </div>
 		        </div>
-
 	    	<?php  
 	    		}
 	    	?>
-
-	    	@endforeach
-	    	
+	    	@endforeach	    	
 	    </div>
 
 	    <div id="terminada" class="col-md-3">
 	        <div class="title" id="title">
-	        	Terminada
+	        	Completed
 	        </div>
 
 			@foreach($tasks as $task)
@@ -83,18 +77,15 @@
 		            
 		            </div>
 		        </div>
-
 	    	<?php  
 	    		}
 	    	?>
-
 	    	@endforeach
-
 	    </div>
 
 	    <div id="verificada" class="col-md-3">
 	        <div class="title" id="title">
-	        	Verificada
+	        	Verified
 	        </div>
 
 			@foreach($tasks as $task)
@@ -111,16 +102,13 @@
 		            
 		            </div>
 		        </div>
-
 	    	<?php  
 	    		}
 	    	?>
-
 	    	@endforeach
 	        
 	    </div>
 	</div>
-
 </body>
 </html> 
 {{HTML::script('js/task.js');}}      
