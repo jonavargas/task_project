@@ -1,14 +1,5 @@
 $('document').ready(init);
 
-
-        $('.Alta, .Media, .Baja').draggable();
-        $('#verificada').droppable({
-            drop: function(event, ui) {        
-                alert('drop id:'+ $(this).attr('id'));
-            }
-        });​
-
-
         $('.glyphicon').click(function confirmar(){                              
             return confirm( '¿Estas seguro de eliminar esta tarea?' );
         });

@@ -1,4 +1,4 @@
-
+﻿
 -- Database: my_task --
 
 -- DROP DATABASE my_task;

@@ -9,8 +9,10 @@ class TaskController extends \BaseController {
 	 */
 	public function index()
 	{
-		$tasks = Task::all();
-		$users = User::all();////////
+		$users = User::all();
+		$id = Auth::user()->id;// Obtenemos el id del usuario actualmente logueado
+		$tasks = Task::tareas_por_usuario($id);// Llamamos a la funcìón encargada de mostrar las tareas 
+											  // del usuario logueado y le pasamos el id del usuario logueado actual
 
         $this->layout->titulo = 'Listado de tareas';
         $this->layout->nest(
@@ -46,13 +48,10 @@ class TaskController extends \BaseController {
 	 */
 	public function store()
 	{
-		$user = User::all();
-		$user = new User();
-
 		$titulo = Input::get("titulo");
         $prioridad = Input::get("prioridad");
         $descripcion = Input::get("descripcion");
-        $estado = ("nueva");
+        $estado = ("nueva");///////////////////////////
         
         $task = new Task();
         $task->titulo = $titulo;
@@ -60,7 +59,8 @@ class TaskController extends \BaseController {
         $task->descripcion = $descripcion;
         $task->estado = $estado;
 
-        $task->users_id = $user->id;/////////////revisar para obtener el id del usuario logueado
+        $id = Auth::user()->id;
+        $task->users_id = $id;
    
         $task->save();
         return Redirect::to('tasks');
@@ -106,21 +106,16 @@ class TaskController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$user = User::all();////////
-		$user = new User();////////
-
 		$titulo = Input::get("titulo");
         $prioridad = Input::get("prioridad");
         $descripcion = Input::get("descripcion");
-        $estado = ("nueva");        
+        $estado = ("nueva");////////////////////////////////////// 
 
         $task = Task::find($id);
         $task->titulo = $titulo;
         $task->prioridad = $prioridad;
         $task->descripcion = $descripcion;
         $task->estado = $estado;
-
-        $user->id = $task->users_id;/////////////revisar para obtener el id del usuario logueado
    
         $task->save();
         return Redirect::to('tasks');

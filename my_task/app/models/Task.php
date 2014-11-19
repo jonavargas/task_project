@@ -7,12 +7,12 @@ class Task extends Eloquent
 	protected $guarded  = array('id');
 	public    $timestamps = false;
 
-	public static function tareas_por_usuario($id)//////////se le agrego parametro --- revisar si es con $
+	public static function tareas_por_usuario($id)
 	{
-		$sql = 'SELECT d.titulo, d.prioridad, d.descripcion
-				FROM dashboard d
-				INNER JOIN users ON (users.id = d.users_id and d.id = $id)
-				order by d.id desc';//cambiar el 1 x el users.id 
+		$sql = 'select d.id, d.titulo, d.prioridad, d.descripcion,  d.estado, d.users_id
+				from dashboard d
+				inner join users ON (users.id = d.users_id and users.id = '.$id.')
+				order by d.id desc';
 		return DB::select($sql);
 	}
 }
