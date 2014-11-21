@@ -54,10 +54,7 @@ class UserController extends \BaseController {
 		            'email' => 'required|min:4|max:100|unique:users','password' => 'confirmed','confirmar' => 'confirmed',		            
 		        );
 
-		$rules_password = array(
-		            'password' => 'confirmed',		            
-		        );
-		 		
+
 		$messages = array(
 		            'required' => 'Este campo es obligatorio.',
 		            'min' => 'Este campo no puede tener menos de :min carácteres.',		            

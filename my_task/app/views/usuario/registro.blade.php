@@ -1,5 +1,6 @@
 <body>
-	@if($errors->has())
+	
+@if($errors->has())
      <div class="email_error">
 	     @if ($errors->has('email'))
 	          <p class="bg-danger">{{ $errors->first('email') }}</p>

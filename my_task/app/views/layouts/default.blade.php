@@ -8,11 +8,8 @@
 	{{HTML::script('bootstrap/js/bootstrap.min.js');}}
 
 </head>
-
-<body class= "body">
-
 	
-
+<body class= "body">	
 	<?php
 		if (Auth::check()) {					
 	?>		
