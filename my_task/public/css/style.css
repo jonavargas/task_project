@@ -30,13 +30,9 @@ h1{
 	color: #FFFFFF;
 }
 
-.glyphicon-remove{
-	color: #070505;	
-}
-
 #task_title :hover{	/* Efecto hover para el titulo tarea en el dashboard */
 	text-decoration: none;
-	color: #160B0B;
+	color: #3688C4;
 }
 
 #descripcion{ /* Descripción tarea en el dashboard */
@@ -52,6 +48,10 @@ h1{
 	float: right;
 	margin-right: 3%;
 	margin-top: -8%;
+}
+
+.glyphicon-remove{
+	color: #FFFFFF;	
 }
 
 .glyphicon-remove:hover {
@@ -115,7 +115,6 @@ color-stop(0.63, white),
 	cursor: pointer;
 }
 
-
 .email{
 	font-size: 1.4em;
 }
@@ -127,7 +126,6 @@ color-stop(0.63, white),
 	border-radius: 5%;
 	margin-left: 33%;
 }
-
 
 .frmlogin{
 	width: 35%;
@@ -143,9 +141,11 @@ color-stop(0.63, white),
 	width: 30%;
 	margin-left: 40%;
 }
+
 .lblEmail{
 	margin-right: 50%;
 }
+
 .lblUser{
 	margin-right: 25%;
 }
@@ -185,6 +185,20 @@ color-stop(0.63, white),
 	
 }
 /* Crear nueva tarea*/
+
+
+.txt_title_create{
+	margin-right: -13%;
+}
+
+.lbl_title_combo{
+	margin-left: 27%;
+}
+
+.title_descripcion{
+	margin-left: -73%;
+}
+
 .newtask{
 	margin-left: 83%;
 	margin-top: -5.5%;

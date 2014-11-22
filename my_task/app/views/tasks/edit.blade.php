@@ -4,10 +4,10 @@
 		<br>
 		{{ Form::open(array('url' => "tasks/$task->id/update")) }}
 			{{ Form::label('titulo', 'Title') }}
-			{{ Form::text('titulo', $task->titulo) }}
-			{{ Form::label('prioridad', 'Priority') }}
+			{{ Form::text('titulo', $task->titulo,array('class' => 'txt_title_create')) }}
+			{{ Form::label('prioridad', 'Priority',array('class' => 'lbl_title_combo')) }}
 			{{ Form::select('prioridad', array('Alta' => 'High', 'Media' => 'Medium', 'Baja' => 'Low'),$task->prioridad,array('id' => 'combobox') ) }}
-			<br><br>{{ Form::label('descripcion', 'Description') }}
+			<br><br>{{ Form::label('descripcion', 'Description',array('class' => 'title_descripcion')) }}
 	
 			<div id="frm_descripcion">{{ Form::textArea('descripcion', $task->descripcion ,array('class' => 'frm_descripcion', 'maxlength' => '250')) }}</div>
     		<div class="lbl_descripcion">Characters Remaining</div> 
