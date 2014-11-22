@@ -10,11 +10,12 @@
 @endif
 <div class="frmlogin">
 	{{ Form::open(array('url' => 'login')) }}
-		<h1 class= "title"> My Task Login</h1>
-		<label for="email"><h4><strong class= "glyphicon glyphicon-user"> User or Email:</strong></h4></label>
+
+		<h1 class= "title titleLogin">Login</h1>
+		<label for="email"><h4><strong class= "glyphicon glyphicon-user lblUser"> User or Email:</strong></h4></label>
 		<div class= "email">{{Form::text('email', Input::old('email'), array('placeholder' => 'User or Email', 'required' => 'true'))}}</div>
 		<br>
-		<label for="password"><h4><strong class="glyphicon glyphicon-credit-card"> Password:</strong></h4></label>
+		<label for="password"><h4><strong class="glyphicon glyphicon-credit-card lblEmail"> Password:</strong></h4></label>
 		<div class="password">{{ Form::password('password', array('placeholder' => 'Password', 'required' => 'true')) }}</div>
 		<br>
 		<br>

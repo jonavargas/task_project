@@ -36,7 +36,7 @@ h1{
 
 #task_title :hover{	/* Efecto hover para el titulo tarea en el dashboard */
 	text-decoration: none;
-	color: #EE8B34;
+	color: #160B0B;
 }
 
 #descripcion{ /* Descripción tarea en el dashboard */
@@ -143,6 +143,12 @@ color-stop(0.63, white),
 	width: 30%;
 	margin-left: 40%;
 }
+.lblEmail{
+	margin-right: 50%;
+}
+.lblUser{
+	margin-right: 25%;
+}
 
 .password{
 	width:17%;
@@ -201,20 +207,20 @@ color-stop(0.63, white),
 /*Prioridad de las tareas*/
 
 .Baja{
-    background-color: #4FB056;
-    border-color: blue;
+    background-color: #8BDF83;
+    border-color: #105205;
     border-width: 2px;
 }
 
 .Media{
-    background-color: #DE862C;
-    border-color: blue;
+    background-color: #F9A173;
+    border-color: #D6660D;
     border-width: 2px;
 }
 
 .Alta{
-    background-color: #E64D4D;
-    border-color: blue;
+    background-color: #F37676;
+    border-color: #AB0606;
     border-width: 2px;
 }
 

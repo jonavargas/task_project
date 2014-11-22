@@ -12,25 +12,24 @@ $('document').ready(init);
 
 
         if (combobox == 'Baja') {
-             $("#create").css({ background: "#4FB056" , 'border': '3px solid blue' });
+             $("#create").css({ background: "#8BDF83" , 'border': '4px solid #105205' });
         }else if (combobox == 'Media') { // si no se llegó al 85% que sea amarilla
-            $("#create").css({ background: "#DE862C", 'border': '3px solid blue' });
+            $("#create").css({ background: "#F9A173", 'border': '4px solid #D6660D' });
         }
         else if (combobox == 'Alta') { // si no se llegó al 85% que sea amarilla
-            $("#create").css({ background: "#E64D4D", 'border': '3px solid blue' });
+            $("#create").css({ background: "#F37676", 'border': '4px solid #AB0606' });
         }
 
         $("#combobox").change(function() {                               
             var combobox = $("#combobox").val();            
 
-            if (combobox == 'Baja') {
-                 $("#create").css({ background: "#4FB056" , 'border': '3px solid blue'});
-
+             if (combobox == 'Baja') {
+             $("#create").css({ background: "#8BDF83" , 'border': '4px solid #105205' });
             }else if (combobox == 'Media') { // si no se llegó al 85% que sea amarilla
-                $("#create").css({ background: "#DE862C" , 'border': '3px solid green'});
+            $("#create").css({ background: "#F9A173", 'border': '4px solid #D6660D' });
             }
             else if (combobox == 'Alta') { // si no se llegó al 85% que sea amarilla
-                $("#create").css({ background: "#E64D4D" , 'border': '3px solid red'});
+                $("#create").css({ background: "#F37676" , 'border': '4px solid #AB0606'});
             }
  
         });
