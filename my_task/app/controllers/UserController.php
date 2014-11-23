@@ -56,11 +56,11 @@ class UserController extends \BaseController {
 
 
 		$messages = array(
-		            'required' => 'Este campo es obligatorio.',
-		            'min' => 'Este campo no puede tener menos de :min carácteres.',		            
-		            'max' => 'Este campo no puede tener más de :max carácteres.',
+		            'required' => 'El campo :attribute es obligatorio.',
+		            'min' => 'El campo :attribute no puede tener menos de :min carácteres.',		            
+		            'max' => 'El campo :attribute no puede tener más de :max carácteres.',
 		            'unique' => 'El usuario o email ingresado ya existe en la base de datos',
-		            'confirmed' => 'El :attribute no coincide con el :attribute de confirmación'
+		            'confirmed' => 'El :attribute no coincide con su confirmación'
 		        );
 	 			
 		$validation = Validator::make(Input::all(), $rules, $messages);
@@ -76,6 +76,7 @@ class UserController extends \BaseController {
 			$email = Input::get('email');
 			$password = Input::get('password');
 			$password = Hash::make($password);
+			
 			$user = new User();
 			$user->email = $email;
 			$user->password = $password;

@@ -58,21 +58,47 @@ class TaskController extends \BaseController {
 	 */
 	public function store()
 	{
-		$titulo = Input::get("titulo");
-        $prioridad = Input::get("prioridad");
-        $descripcion = Input::get("descripcion");
-        $estado = ("nueva");///////////////////////////
-        
-        $task = new Task();
-        $task->titulo = $titulo;
-        $task->prioridad = $prioridad;
-        $task->descripcion = $descripcion;
-        $task->estado = $estado;
+		$titulo = e(Input::get('titulo'));
+		$descripcion = e(Input::get('descripcion'));
+		 
+		$rules = array(
+		            'titulo' => 'required|min:1|max:50','descripcion' => 'required|min:4|max:250',		            
+		        );
 
-        $id = Auth::user()->id;
-        $task->users_id = $id;
-   
-        $task->save();
+		$messages = array(
+		            'required' => 'El campo :attribute es obligatorio.',
+		            'min' => 'El campo :attribute no puede tener menos de :min carácteres.',		            
+		            'max' => 'El campo :attribute tener más de :max carácteres.'
+		        );
+	 			
+		$validation = Validator::make(Input::all(), $rules, $messages);
+		 
+		if ($validation->fails())
+		{
+		       
+		       return Redirect::to('tasks/create')->withErrors($validation)->withInput();
+		}
+
+		else
+		{
+
+			$titulo = Input::get("titulo");
+	        $prioridad = Input::get("prioridad");
+	        $descripcion = Input::get("descripcion");
+	        $estado = ("nueva");
+	        
+	        $task = new Task();
+	        $task->titulo = $titulo;
+	        $task->prioridad = $prioridad;
+	        $task->descripcion = $descripcion;
+	        $task->estado = $estado;
+
+	        $id = Auth::user()->id;
+	        $task->users_id = $id;
+	   
+	        $task->save();
+    	}
+    	
         return Redirect::to('tasks');
 	}
 

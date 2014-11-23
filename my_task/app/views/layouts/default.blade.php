@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>	
+	<title>My Task</title>	
 	{{HTML::script('js/jquery-2.0.3.min.js');}}
 	{{HTML::style('css/style.css');}}
 	{{HTML::style('bootstrap/css/bootstrap.min.css');}}

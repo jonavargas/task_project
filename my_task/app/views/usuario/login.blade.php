@@ -1,13 +1,7 @@
 <body >
 	
 
-@if ($errors->has())
-    <div class="alert-danger text-center" role="alert">
-        <small>{{ $errors->first('email') }}</small>
-        <small>{{ $errors->first('password') }}</small>
-        <small>{{ $errors->first('invalid_credentials') }}</small>
-    </div>
-@endif
+
 <div class="frmlogin">
 	{{ Form::open(array('url' => 'login')) }}
 
@@ -18,6 +12,15 @@
 		<label for="password"><h4><strong class="glyphicon glyphicon-credit-card lblEmail"> Password:</strong></h4></label>
 		<div class="password">{{ Form::password('password', array('placeholder' => 'Password', 'required' => 'true')) }}</div>
 		<br>
+		
+		@if ($errors->has())
+		    <div class="alert-danger text-center" role="alert">
+		        <small>{{ $errors->first('email') }}</small>
+		        <small>{{ $errors->first('password') }}</small>
+		        <small>{{ $errors->first('invalid_credentials') }}</small>
+		    </div>
+		@endif
+
 		<br>
 		<div class="submit">{{ Form::submit('Log In', array('class' => 'btn btn-primary'))}}</div>	
 		<div class="registrarse">{{ HTML::linkAction('UserController@create', 'Sign in', array(), array('class' => 'btn btn-primary ')) }}</div>

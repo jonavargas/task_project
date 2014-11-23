@@ -157,6 +157,18 @@ color-stop(0.63, white),
 	font-size: 1.4em;
 }
 
+.lbl_reg_user{
+	margin-right: 11%;
+}
+
+.lbl_reg_pass{
+	margin-right: 24%;
+}
+
+.lbl_reg_confirm{
+	margin-right: 6%;	
+}
+
 #title /* Titulo de los divs contenedores */
 {	margin-left: -16px;
 	border: 2px solid #999;
