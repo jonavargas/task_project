@@ -1,6 +1,5 @@
-// número máximo de caracteres
+// número máximo de caracteres para la descripción
 var limite = 250;
-
 
 $('document').ready(init);
 
@@ -12,7 +11,7 @@ $('document').ready(init);
 
 
         if (combobox == 'Baja') {
-             $("#create").css({ background: "#8BDF83" , 'border': '4px solid #105205' });
+            $("#create").css({ background: "#8BDF83" , 'border': '4px solid #105205' });
         }else if (combobox == 'Media') { // si no se llegó al 85% que sea amarilla
             $("#create").css({ background: "#F9A173", 'border': '4px solid #D6660D' });
         }
@@ -23,8 +22,8 @@ $('document').ready(init);
         $("#combobox").change(function() {                               
             var combobox = $("#combobox").val();            
 
-             if (combobox == 'Baja') {
-             $("#create").css({ background: "#8BDF83" , 'border': '4px solid #105205' });
+            if (combobox == 'Baja') {
+            $("#create").css({ background: "#8BDF83" , 'border': '4px solid #105205' });
             }else if (combobox == 'Media') { // si no se llegó al 85% que sea amarilla
             $("#create").css({ background: "#F9A173", 'border': '4px solid #D6660D' });
             }
@@ -56,46 +55,38 @@ $('document').ready(init);
             }               
         });             
 
-        var id_contenedor;///////////
-        var id_arrastrable;///////////
+        var estado;// variable que guarda el estado en que se encuantra la tarea, despues de arrastrarla
+        var id;//variable que almacena el id de la tarea arrastrada
 
         function init(){
             $('.Alta, .Media, .Baja').bind('dragstart', function(event) {//#item1 este deberia ser el id de la base de datos
                 event.originalEvent.dataTransfer.setData("text/plain", event.target.getAttribute('id'));
-                id_arrastrable = event.target.getAttribute('id');
+                id = event.target.getAttribute('id');
             });
             
-   // bind the dragover event on the board sections
+            // bind the dragover event on the board sections
             $('#nueva, #en_progreso, #terminada, #verificada').bind('dragover', function(event) {
                 event.preventDefault();
             });
 
-// bind the drop event on the board sections
+            // bind the drop event on the board sections
             $('#nueva, #en_progreso, #terminada, #verificada').bind('drop', function(event) {
                 var notecard = event.originalEvent.dataTransfer.getData("text/plain");
                 event.target.appendChild(document.getElementById(notecard));
-               // alert(event.target.getAttribute('id'));//Obtiene el id del contenedor en el cual se solto el elemento arrastrable
-    // Turn off the default behaviour
-    // without this, FF will try and go to a URL with your id's name
+                // alert(event.target.getAttribute('id'));//Obtiene el id del contenedor en el cual se solto el elemento arrastrable
+                // Turn off the default behaviour
+                // without this, FF will try and go to a URL with your id's name
                 
-                id_contenedor = event.target.getAttribute('id');////////////
-                alert(id_arrastrable + ' ' + id_contenedor);////////////////
+                estado = event.target.getAttribute('id');
 
+                $data = {id : id, estado : estado};
+                    $.ajax({
+                            type: "GET",
+                            url : "tasks",
+                            data : $data,
+                            contentType: 'application/x-www-form-urlencoded'
+                        });
 
-///////////////
-
-             $.ajax({
-                url: '/tasks/{'+id_arrastrable+'}/update' ,
-                data:{id_arrastrable: "id_arrastrable", id_contenedor: "id_contenedor"},
-                type: 'post',
-                success:function(data){
-                    alert(url);
-                }
-            });
-
-
-///////////////////
-
-	    });
+            event.preventDefault();
+	    });        
     }
-   

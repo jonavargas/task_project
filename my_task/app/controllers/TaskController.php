@@ -8,7 +8,19 @@ class TaskController extends \BaseController {
 	 * @return Response
 	 */
 	public function index()
-	{
+	{		
+		if (Request::ajax())
+		{
+			$id = Input::get( 'id' );
+			$estado = Input::get("estado");
+
+    		$task = Task::find($id);
+	        $task->estado = $estado;
+	  
+	        $task->save();
+	        return Redirect::to('tasks');
+		}
+
 		$users = User::all();
 		$id = Auth::user()->id;// Obtenemos el id del usuario actualmente logueado
 		$tasks = Task::tareas_por_usuario($id);// Llamamos a la funcìón encargada de mostrar las tareas 
@@ -24,7 +36,6 @@ class TaskController extends \BaseController {
         );
 	}
 
-
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -39,7 +50,6 @@ class TaskController extends \BaseController {
             array()
         );
 	}
-
 
 	/**
 	 * Store a newly created resource in storage.
@@ -66,7 +76,6 @@ class TaskController extends \BaseController {
         return Redirect::to('tasks');
 	}
 
-
 	/**
 	 * Display the specified resource.
 	 *
@@ -77,7 +86,6 @@ class TaskController extends \BaseController {
 	{
 		//
 	}
-
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -97,7 +105,6 @@ class TaskController extends \BaseController {
         );
 	}
 
-
 	/**
 	 * Update the specified resource in storage.
 	 *
@@ -109,13 +116,11 @@ class TaskController extends \BaseController {
 		$titulo = Input::get("titulo");
         $prioridad = Input::get("prioridad");
         $descripcion = Input::get("descripcion");
-        $estado = ("nueva");////////////////////////////////////// 
 
         $task = Task::find($id);
         $task->titulo = $titulo;
         $task->prioridad = $prioridad;
         $task->descripcion = $descripcion;
-        $task->estado = $estado;
    
         $task->save();
         return Redirect::to('tasks');

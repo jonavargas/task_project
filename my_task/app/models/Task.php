@@ -12,7 +12,7 @@ class Task extends Eloquent
 		$sql = 'select d.id, d.titulo, d.prioridad, d.descripcion,  d.estado, d.users_id
 				from dashboard d
 				inner join users ON (users.id = d.users_id and users.id = '.$id.')
-				order by d.id desc';
+				order by d.titulo asc';
 		return DB::select($sql);
 	}
 }
