@@ -23,6 +23,5 @@ Route::get('auth', 'UserController@isLogged');
 Route::group(array('before' => 'auth'), function () {
 	Route::resource('tasks', 'TaskController');
 	Route::post('tasks/{id}/update', 'TaskController@update');
-	Route::get('tasks/{id}/delete', 'TaskController@destroy');
-
+	Route::get('tasks/{id}/delete', 'TaskController@destroy');	
 });

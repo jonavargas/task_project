@@ -10,7 +10,7 @@
 	
 
 	@if($errors->has())
-	    <div class="titulo_error">
+	    <div class="alert-danger text-center" role="alert">
 		    @if ($errors->has('titulo'))
 	       		<p class="bg-danger">{{ $errors->first('titulo') }}</p>
 		    @endif
@@ -21,7 +21,7 @@
 	<div id="frm_descripcion">{{ Form::textArea('descripcion', '' ,array('class' => 'frm_descripcion', 'maxlength' => '250')) }}</div>
 
 	@if($errors->has())
-	    <div class="descripcion_error">
+	    <div class="alert-danger text-center" role="alert">
 		    @if ($errors->has('descripcion'))
 	        	<p class="bg-danger">{{ $errors->first('descripcion') }}</p>
 		    @endif

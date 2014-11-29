@@ -62,7 +62,7 @@ class TaskController extends \BaseController {
 		$descripcion = e(Input::get('descripcion'));
 		 
 		$rules = array(
-		            'titulo' => 'required|min:1|max:50','descripcion' => 'required|min:4|max:250',		            
+		            'titulo' => 'required|min:1|max:50','descripcion' => 'required|min:3|max:250'
 		        );
 
 		$messages = array(
@@ -97,9 +97,8 @@ class TaskController extends \BaseController {
 	        $task->users_id = $id;
 	   
 	        $task->save();
-    	}
-    	
-        return Redirect::to('tasks');
+	        return Redirect::to('tasks');
+    	}    	       
 	}
 
 	/**

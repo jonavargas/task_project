@@ -77,14 +77,13 @@ $('document').ready(init);
                 // Turn off the default behaviour
                 // without this, FF will try and go to a URL with your id's name
                 
-                estado = event.target.getAttribute('id');
-
+		estado = event.target.getAttribute('id');		
+                
                 $data = {id : id, estado : estado};
                     $.ajax({
                             type: "GET",
                             url : "tasks",
-                            data : $data,
-                            contentType: 'application/x-www-form-urlencoded'
+                            data : $data                            
                         });
 
             event.preventDefault();

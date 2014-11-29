@@ -51,7 +51,7 @@ class UserController extends \BaseController {
 		$confirmar = e(Input::get('confirmar'));
 		 
 		$rules = array(
-		            'email' => 'required|min:4|max:100|unique:users','password' => 'confirmed','confirmar' => 'confirmed',		            
+		            'email' => 'required|min:3|max:100|unique:users','password' => 'confirmed','confirmar' => 'confirmed',		            
 		        );
 
 
