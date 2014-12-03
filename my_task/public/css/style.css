@@ -234,19 +234,19 @@ color-stop(0.63, white),
 
 /*Prioridad de las tareas*/
 
-.Baja{
+.c_Baja{
     background-color: #8BDF83;
     border-color: #105205;
     border-width: 2px;    
 }
 
-.Media{
+.b_Media{
     background-color: #F9A173;
     border-color: #D6660D;
     border-width: 2px;
 }
 
-.Alta{
+.a_Alta{
     background-color: #F37676;
     border-color: #AB0606;
     border-width: 2px;

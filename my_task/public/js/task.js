@@ -10,24 +10,24 @@ $('document').ready(init);
         var combobox = $("#combobox").val();
 
 
-        if (combobox == 'Baja') {
+        if (combobox == 'c_Baja') {
             $("#create").css({ background: "#8BDF83" , 'border': '4px solid #105205' });
-        }else if (combobox == 'Media') { // si no se llegó al 85% que sea amarilla
+        }else if (combobox == 'b_Media') { // si no se llegó al 85% que sea amarilla
             $("#create").css({ background: "#F9A173", 'border': '4px solid #D6660D' });
         }
-        else if (combobox == 'Alta') { // si no se llegó al 85% que sea amarilla
+        else if (combobox == 'a_Alta') { // si no se llegó al 85% que sea amarilla
             $("#create").css({ background: "#F37676", 'border': '4px solid #AB0606' });
         }
 
         $("#combobox").change(function() {                               
             var combobox = $("#combobox").val();            
 
-            if (combobox == 'Baja') {
+            if (combobox == 'c_Baja') {
             $("#create").css({ background: "#8BDF83" , 'border': '4px solid #105205' });
-            }else if (combobox == 'Media') { // si no se llegó al 85% que sea amarilla
+            }else if (combobox == 'b_Media') { // si no se llegó al 85% que sea amarilla
             $("#create").css({ background: "#F9A173", 'border': '4px solid #D6660D' });
             }
-            else if (combobox == 'Alta') { // si no se llegó al 85% que sea amarilla
+            else if (combobox == 'a_Alta') { // si no se llegó al 85% que sea amarilla
                 $("#create").css({ background: "#F37676" , 'border': '4px solid #AB0606'});
             }
  
@@ -59,7 +59,7 @@ $('document').ready(init);
         var id;//variable que almacena el id de la tarea arrastrada
 
         function init(){
-            $('.Alta, .Media, .Baja').bind('dragstart', function(event) {//#item1 este deberia ser el id de la base de datos
+            $('.a_Alta, .b_Media, .c_Baja').bind('dragstart', function(event) {//#item1 este deberia ser el id de la base de datos
                 event.originalEvent.dataTransfer.setData("text/plain", event.target.getAttribute('id'));
                 id = event.target.getAttribute('id');
             });

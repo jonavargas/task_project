@@ -6,7 +6,7 @@
 	{{ Form::label('titulo', 'Title') }}
 	{{ Form::text('titulo', '',array('class' => 'txt_title_create')) }}
 	{{ Form::label('prioridad', 'Priority',array('class' => 'lbl_title_combo')) }}
-	{{ Form::select('prioridad', array('Baja' => 'Low', 'Media' => 'Medium', 'Alta' => 'High'), null,array('id' => 'combobox')) }}
+	{{ Form::select('prioridad', array('c_Baja' => 'Low', 'b_Media' => 'Medium', 'a_Alta' => 'High'), null,array('id' => 'combobox')) }}
 	
 
 	@if($errors->has())
