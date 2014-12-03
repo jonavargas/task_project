@@ -64,17 +64,13 @@ $('document').ready(init);
                 id = event.target.getAttribute('id');
             });
             
-            // bind the dragover event on the board sections
             $('#nueva, #en_progreso, #terminada, #verificada').bind('dragover', function(event) {
                 event.preventDefault();
             });
 
-            // bind the drop event on the board sections
             $('#nueva, #en_progreso, #terminada, #verificada').bind('drop', function(event) {
                 var notecard = event.originalEvent.dataTransfer.getData("text/plain");
                 event.target.appendChild(document.getElementById(notecard));
-                // alert(event.target.getAttribute('id'));//Obtiene el id del contenedor en el cual se solto el elemento arrastrable
-                
                 
 		        estado = event.target.getAttribute('id');		
                 
