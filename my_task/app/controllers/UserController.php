@@ -33,7 +33,7 @@ class UserController extends \BaseController {
             return Redirect::to('tasks');
         } else {
             // validation not successful, send back to form
-            return Redirect::to('login')->withErrors(array('invalid_credentials' => 'Acceso Denegado'));
+            return Redirect::to('login')->withErrors(array('invalid_credentials' => 'Access Denied'));
         }
 
 	}
@@ -56,11 +56,11 @@ class UserController extends \BaseController {
 
 
 		$messages = array(
-		            'required' => 'El campo :attribute es obligatorio.',
-		            'min' => 'El campo :attribute no puede tener menos de :min carácteres.',		            
-		            'max' => 'El campo :attribute no puede tener más de :max carácteres.',
-		            'unique' => 'El usuario o email ingresado ya existe en la base de datos',
-		            'confirmed' => 'El :attribute no coincide con su confirmación'
+		            'required' => 'Field :attribute is mandatory.',
+		            'min' => 'Field :attribute can not be less than :min characters.',		            
+		            'max' => 'Field :attribute can not be more than :max characters.',
+		            'unique' => 'The username or email I entered already exists in the database.',
+		            'confirmed' => 'The :attribute does not match confirmation.'
 		        );
 	 			
 		$validation = Validator::make(Input::all(), $rules, $messages);

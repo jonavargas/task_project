@@ -18,7 +18,7 @@
 	@endif
 		
 	<br><br>{{ Form::label('descripcion', 'Description',array('class' => 'title_descripcion')) }}
-	<div id="frm_descripcion">{{ Form::textArea('descripcion', '' ,array('class' => 'frm_descripcion', 'maxlength' => '250')) }}</div>
+	<div id="frm_descripcion">{{ Form::textArea('descripcion', '' ,array('class' => 'frm_descripcion', 'maxlength' => '220')) }}</div>
 
 	@if($errors->has())
 	    <div class="alert-danger text-center" role="alert">
@@ -29,7 +29,7 @@
 	@endif
 	
     <div class="lbl_descripcion">Characters Remaining</div> 
-    <div class="divContador">250</div>    
+    <div class="divContador">220</div>    
 
 	<br>
 	<br>

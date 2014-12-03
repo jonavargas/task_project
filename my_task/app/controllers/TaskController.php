@@ -66,9 +66,9 @@ class TaskController extends \BaseController {
 		        );
 
 		$messages = array(
-		            'required' => 'El campo :attribute es obligatorio.',
-		            'min' => 'El campo :attribute no puede tener menos de :min carácteres.',		            
-		            'max' => 'El campo :attribute tener más de :max carácteres.'
+		            'required' => 'Field :attribute is mandatory.',
+		            'min' => 'Field :attribute can not be less than :min characters.',		            
+		            'max' => 'Field :attribute have more than :max characters.'
 		        );
 	 			
 		$validation = Validator::make(Input::all(), $rules, $messages);

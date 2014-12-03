@@ -1,10 +1,10 @@
 // número máximo de caracteres para la descripción
-var limite = 250;
+var limite = 220;
 
 $('document').ready(init);
 
         $('.glyphicon-remove').click(function confirmar(){                              
-            return confirm( '¿Estas seguro de eliminar esta tarea?' );
+            return confirm( '¿Are you sure to remove this task?' );
         });
 
         var combobox = $("#combobox").val();
@@ -12,10 +12,10 @@ $('document').ready(init);
 
         if (combobox == 'c_Baja') {
             $("#create").css({ background: "#8BDF83" , 'border': '4px solid #105205' });
-        }else if (combobox == 'b_Media') { // si no se llegó al 85% que sea amarilla
+        }else if (combobox == 'b_Media') {
             $("#create").css({ background: "#F9A173", 'border': '4px solid #D6660D' });
         }
-        else if (combobox == 'a_Alta') { // si no se llegó al 85% que sea amarilla
+        else if (combobox == 'a_Alta') { 
             $("#create").css({ background: "#F37676", 'border': '4px solid #AB0606' });
         }
 
@@ -24,16 +24,16 @@ $('document').ready(init);
 
             if (combobox == 'c_Baja') {
             $("#create").css({ background: "#8BDF83" , 'border': '4px solid #105205' });
-            }else if (combobox == 'b_Media') { // si no se llegó al 85% que sea amarilla
+            }else if (combobox == 'b_Media') {
             $("#create").css({ background: "#F9A173", 'border': '4px solid #D6660D' });
             }
-            else if (combobox == 'a_Alta') { // si no se llegó al 85% que sea amarilla
+            else if (combobox == 'a_Alta') { 
                 $("#create").css({ background: "#F37676" , 'border': '4px solid #AB0606'});
             }
  
         });
 
-        $(".frm_descripcion").keyup(function(e)
+        $(".frm_descripcion").keyup(function(e)//Funcion para los caracteres del campo de las tareas
         {
 
             // obtenemos el texto que está escrito en el textarea
@@ -74,10 +74,9 @@ $('document').ready(init);
                 var notecard = event.originalEvent.dataTransfer.getData("text/plain");
                 event.target.appendChild(document.getElementById(notecard));
                 // alert(event.target.getAttribute('id'));//Obtiene el id del contenedor en el cual se solto el elemento arrastrable
-                // Turn off the default behaviour
-                // without this, FF will try and go to a URL with your id's name
                 
-		estado = event.target.getAttribute('id');		
+                
+		        estado = event.target.getAttribute('id');		
                 
                 $data = {id : id, estado : estado};
                     $.ajax({
@@ -86,6 +85,6 @@ $('document').ready(init);
                             data : $data                            
                         });
 
-            event.preventDefault();
-	    });        
-    }
+                event.preventDefault();
+	        });        
+        }
